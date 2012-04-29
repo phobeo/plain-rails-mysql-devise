@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+	<div class="signed_in">
+		<p>signed in as <%= current_user.email %></p>
+		<p><%= link_to('sign out', destroy_user_session_path, :method => :delete) %></p>
+	</div>
+<% else %>
+	<div class="signed_out">
+		<p><%= link_to('sign in', new_user_session_path)  %></p>
+	</div>
+<% end %>
